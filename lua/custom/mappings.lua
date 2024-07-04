@@ -50,4 +50,12 @@ M.gopher = {
   }
 }
 
+M.persistence = {
+  n = {
+    ["<leader>qs"] = { function() require("persistence").load() end, "Restore Session" },
+    ["<leader>ql"] = { function() require("persistence").load({ last = true }) end, "Restore Last Session" },
+    ["<leader>qd"] = { function() require("persistence").stop() end, "Don't Save Current Session" },
+  },
+}
+
 return M
