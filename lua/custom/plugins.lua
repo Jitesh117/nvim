@@ -4,6 +4,15 @@ local plugins = {
     opts = {
       ensure_installed = {
         "gopls",
+        "gofumpt",
+        "golines",
+        "goimports",
+        "goimports-reviser",
+        "pyright",
+        "black",
+        "mypy",
+        "ruff",
+        "debugpy",
       },
     },
   },
@@ -22,6 +31,7 @@ local plugins = {
       require("core.utils").load_mappings("dap_go")
     end
   },
+  
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -31,7 +41,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = "go",
+    ft = {"go", "python"},
     opts = function()
       return require "custom.configs.null-ls"
     end,
@@ -56,6 +66,37 @@ local plugins = {
         options = { "buffers", "curdir", "tabpages", "winsize" },
       })
     end,
+  },
+  -- {
+  --   "OXY2DEV/markview.nvim",
+  --   ft = "markdown",
+
+  --   dependencies = {
+  --       -- You may not need this if you don't lazy load
+  --       -- Or if the parsers are in your $RUNTIMEPATH
+  --       "nvim-treesitter/nvim-treesitter",
+
+  --       "nvim-tree/nvim-web-devicons"
+  --   },
+  -- },
+  -- {
+  --   'MeanderingProgrammer/markdown.nvim',
+  --   name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
+  --   ft = "markdown",
+  --   dependencies = {
+  --       'nvim-treesitter/nvim-treesitter', -- Mandatory
+  --       'nvim-tree/nvim-web-devicons', -- Optional but recommended
+  --   },
+  --   config = function()
+  --       require('render-markdown').setup({})
+  --   end,
+  -- },
+
+  -- Wakatime
+  { 'wakatime/vim-wakatime', lazy = false },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
   },
 }
 return plugins
