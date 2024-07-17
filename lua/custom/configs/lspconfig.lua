@@ -23,12 +23,12 @@ lspconfig.gopls.setup {
   },
 }
 
-local servers = {
+local python_servers = {
   "pyright",
   "ruff",
 }
 
-for _, lsp in ipairs(servers) do
+for _, lsp in ipairs(python_servers) do
   lspconfig[lsp].setup({
     on_attach = on_attach,
     capabilities = capabilities,
