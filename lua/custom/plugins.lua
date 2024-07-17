@@ -3,16 +3,23 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        -- go stuff
         "gopls",
         "gofumpt",
         "golines",
         "goimports",
         "goimports-reviser",
+        -- python stuff
         "pyright",
         "black",
         "mypy",
         "ruff",
         "debugpy",
+        -- web dev stuff
+        "eslint-lsp",
+        "prettierd",
+        "tailwindcss-language-server",
+        "typescript-language-server",
       },
     },
   },

@@ -48,3 +48,12 @@ for _, lsp in ipairs(servers) do
     },
   })
 end
+
+local web_dev_servers = {"tsserver", "tailwindcss", "eslint"}
+
+for _, lsp in ipairs(web_dev_servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end
