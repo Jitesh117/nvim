@@ -38,7 +38,7 @@ local plugins = {
       require("core.utils").load_mappings("dap_go")
     end
   },
-  
+
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -47,8 +47,15 @@ local plugins = {
     end,
   },
   {
+    "nvimtools/none-ls.nvim",
+    event = "VeryLazy",
+    opts = function()
+      return require "custom.configs.null-ls"
+    end
+  },
+  {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = {"go", "python"},
+    ft = { "go", "python" },
     opts = function()
       return require "custom.configs.null-ls"
     end,
@@ -74,36 +81,45 @@ local plugins = {
       })
     end,
   },
-  -- {
-  --   "OXY2DEV/markview.nvim",
-  --   ft = "markdown",
-
-  --   dependencies = {
-  --       -- You may not need this if you don't lazy load
-  --       -- Or if the parsers are in your $RUNTIMEPATH
-  --       "nvim-treesitter/nvim-treesitter",
-
-  --       "nvim-tree/nvim-web-devicons"
-  --   },
-  -- },
-  -- {
-  --   'MeanderingProgrammer/markdown.nvim',
-  --   name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
-  --   ft = "markdown",
-  --   dependencies = {
-  --       'nvim-treesitter/nvim-treesitter', -- Mandatory
-  --       'nvim-tree/nvim-web-devicons', -- Optional but recommended
-  --   },
-  --   config = function()
-  --       require('render-markdown').setup({})
-  --   end,
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function()
+      opts = require "plugins.configs.treesitter"
+      opts.ensure_installed = {
+        "lua",
+        "javascript",
+        "typescript",
+        "tsx",
+        "go",
+        "python"
+      }
+      return opts
+    end
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    ft = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+    },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end
+  },
 
   -- Wakatime
   { 'wakatime/vim-wakatime', lazy = false },
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
+  },
+  {
+    "olrtg/nvim-emmet",
+    config = function()
+      vim.keymap.set({ "n", "v" }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
+    end,
   },
 }
 return plugins
