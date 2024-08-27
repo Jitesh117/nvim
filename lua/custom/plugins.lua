@@ -17,7 +17,7 @@ local plugins = {
         "debugpy",
         -- web dev stuff
         "eslint-lsp",
-        "prettierd",
+        "prettier",
         "tailwindcss-language-server",
         "typescript-language-server",
       },
@@ -84,7 +84,7 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
-      opts = require "plugins.configs.treesitter"
+      local opts = require "plugins.configs.treesitter"
       opts.ensure_installed = {
         "lua",
         "javascript",
