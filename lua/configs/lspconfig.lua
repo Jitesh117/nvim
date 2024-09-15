@@ -1,8 +1,25 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+-- load defaults i.e lua_lsp
+require("nvchad.configs.lspconfig").defaults()
+
+local lspconfig = require "lspconfig"
+
+-- EXAMPLE
+local servers = { "html", "cssls" }
+local nvlsp = require "nvchad.configs.lspconfig"
+
+-- lsps with default config
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = nvlsp.on_attach,
+    on_init = nvlsp.on_init,
+    capabilities = nvlsp.capabilities,
+  }
+end
+
+local on_attach = require("nvchad.configs.lspconfig").on_attach
+local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require("lspconfig")
-local util = require "lspconfig/util"
 
 -- go LSP
 lspconfig.gopls.setup {
@@ -10,7 +27,7 @@ lspconfig.gopls.setup {
   capabilities = capabilities,
   cmd = {"gopls"},
   filetypes = { "go", "gomod", "gowork", "gotmpl" },
-  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  -- root_dir = util.root_pattern("go.work", "go.mod", ".git"),
   settings = {
     gopls = {
       completeUnimported = true,
@@ -34,7 +51,7 @@ for _, lsp in ipairs(python_servers) do
     capabilities = capabilities,
     filetypes = {"python"},
     root_dir = function(fname)
-      return util.root_pattern("pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", ".git")(fname) or util.path.dirname(fname)
+      -- return util.root_pattern("pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", ".git")(fname) or util.path.dirname(fname)
     end,
     settings = {
       python = {
@@ -49,7 +66,7 @@ for _, lsp in ipairs(python_servers) do
   })
 end
 
-local web_dev_servers = {"tsserver", "tailwindcss", "eslint", }
+local web_dev_servers = {"ts_ls", "tailwindcss", "eslint", }
 
 for _, lsp in ipairs(web_dev_servers) do
   lspconfig[lsp].setup {
@@ -84,3 +101,11 @@ lspconfig.emmet_language_server.setup({
     variables = {},
   },
 })
+
+
+-- configuring single server, example: typescript
+-- lspconfig.ts_ls.setup {
+--   on_attach = nvlsp.on_attach,
+--   on_init = nvlsp.on_init,
+--   capabilities = nvlsp.capabilities,
+-- }

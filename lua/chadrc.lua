@@ -1,15 +1,19 @@
+-- This file needs to have same structure as nvconfig.lua
+-- https://github.com/NvChad/ui/blob/v2.5/lua/nvconfig.lua
+-- Please read that file to know all available options :(
+
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
-  theme = 'catppuccin',
-  transparency = true,
+M.base46 = {
+  theme = "catppuccin",
+  -- transparency = true,
   hl_override = {
     NvDashAscii = {
       bg = "NONE",
-      fg = "baby_pink"
+      fg = "baby_pink",
     },
-  NvDashButtons = {
+    NvDashButtons = {
       bg = "NONE",
     },
   },
@@ -25,8 +29,7 @@ M.ui = {
       [[ ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ]],
       [[                                                    ]],
     },
-  }
+  },
 }
-M.plugins = "custom.plugins"
-M.mappings = require "custom.mappings"
+
 return M
