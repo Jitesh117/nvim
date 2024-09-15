@@ -1,40 +1,19 @@
 return {
-    {
-      "stevearc/conform.nvim",
-      -- event = 'BufWritePre', -- uncomment for format on save
-      opts = require "configs.conform",
-    },
+  {
+    "stevearc/conform.nvim",
+    -- event = 'BufWritePre', -- uncomment for format on save
+    opts = require "configs.conform",
+  },
 
-    -- These are some examples, uncomment them if you want to see them work!
-    {
-      "neovim/nvim-lspconfig",
-      config = function()
-        require "configs.lspconfig"
-      end,
-    },
-    {
+  -- These are some examples, uncomment them if you want to see them work!
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "configs.lspconfig"
+    end,
+  },
+  {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        -- go stuff
-        "gopls",
-        "gofumpt",
-        "golines",
-        "goimports",
-        "goimports-reviser",
-        -- python stuff
-        "pyright",
-        "black",
-        "mypy",
-        "ruff",
-        "debugpy",
-        -- web dev stuff
-        "eslint-lsp",
-        "prettier",
-        "tailwindcss-language-server",
-        "typescript-language-server",
-      },
-    },
   },
   {
     "mfussenegger/nvim-dap",
@@ -45,7 +24,7 @@ return {
     dependencies = "mfussenegger/nvim-dap",
     config = function(_, opts)
       require("dap-go").setup(opts)
-    end
+    end,
   },
 
   {
@@ -69,10 +48,10 @@ return {
     "folke/persistence.nvim",
     event = "BufReadPre",
     config = function()
-      require("persistence").setup({
-        dir = vim.fn.expand(vim.fn.stdpath("state") .. "/sessions/"),
+      require("persistence").setup {
+        dir = vim.fn.expand(vim.fn.stdpath "state" .. "/sessions/"),
         options = { "buffers", "curdir", "tabpages", "winsize" },
-      })
+      }
     end,
   },
   {
@@ -85,10 +64,10 @@ return {
         "typescript",
         "tsx",
         "go",
-        "python"
+        "python",
       }
       return opts
-    end
+    end,
   },
   {
     "windwp/nvim-ts-autotag",
@@ -100,11 +79,11 @@ return {
     },
     config = function()
       require("nvim-ts-autotag").setup()
-    end
+    end,
   },
 
   -- Wakatime
-  { 'wakatime/vim-wakatime', lazy = false },
+  { "wakatime/vim-wakatime", lazy = false },
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
@@ -112,17 +91,17 @@ return {
   {
     "olrtg/nvim-emmet",
     config = function()
-      vim.keymap.set({ "n", "v" }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
+      vim.keymap.set({ "n", "v" }, "<leader>xe", require("nvim-emmet").wrap_with_abbreviation)
     end,
   },
 
-    -- {
-    -- 	"nvim-treesitter/nvim-treesitter",
-    -- 	opts = {
-    -- 		ensure_installed = {
-    -- 			"vim", "lua", "vimdoc",
-    --      "html", "css"
-    -- 		},
-    -- 	},
-    -- },
+  -- {
+  -- 	"nvim-treesitter/nvim-treesitter",
+  -- 	opts = {
+  -- 		ensure_installed = {
+  -- 			"vim", "lua", "vimdoc",
+  --      "html", "css"
+  -- 		},
+  -- 	},
+  -- },
 }

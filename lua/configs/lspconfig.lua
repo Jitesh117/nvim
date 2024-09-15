@@ -19,13 +19,13 @@ end
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local lspconfig = require("lspconfig")
+local lspconfig = require "lspconfig"
 
 -- go LSP
 lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  cmd = {"gopls"},
+  cmd = { "gopls" },
   filetypes = { "go", "gomod", "gowork", "gotmpl" },
   -- root_dir = util.root_pattern("go.work", "go.mod", ".git"),
   settings = {
@@ -46,27 +46,27 @@ local python_servers = {
 }
 
 for _, lsp in ipairs(python_servers) do
-  lspconfig[lsp].setup({
+  lspconfig[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
-    filetypes = {"python"},
+    filetypes = { "python" },
     root_dir = function(fname)
       -- return util.root_pattern("pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", ".git")(fname) or util.path.dirname(fname)
     end,
     settings = {
       python = {
         analysis = {
-          typeCheckingMode = "basic",  -- or "strict"
+          typeCheckingMode = "basic", -- or "strict"
           autoSearchPaths = true,
           useLibraryCodeForTypes = true,
           diagnosticMode = "workspace",
         },
       },
     },
-  })
+  }
 end
 
-local web_dev_servers = {"ts_ls", "tailwindcss", "eslint", }
+local web_dev_servers = { "ts_ls", "tailwindcss", "eslint" }
 
 for _, lsp in ipairs(web_dev_servers) do
   lspconfig[lsp].setup {
@@ -75,9 +75,35 @@ for _, lsp in ipairs(web_dev_servers) do
   }
 end
 
+-- markdown
+local markdown_servers = { "marksman" }
+
+for _, lsp in ipairs(markdown_servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "markdown" }, -- add markdown file type here
+    settings = {
+      -- add any specific settings for the Markdown LSP here
+    },
+  }
+end
+
 -- emmet lsp
-lspconfig.emmet_language_server.setup({
-  filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug","typescript", "typescriptreact" },
+lspconfig.emmet_language_server.setup {
+  filetypes = {
+    "css",
+    "eruby",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "less",
+    "sass",
+    "scss",
+    "pug",
+    "typescript",
+    "typescriptreact",
+  },
   -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
   -- **Note:** only the options listed in the table are supported.
   init_options = {
@@ -100,8 +126,7 @@ lspconfig.emmet_language_server.setup({
     --- @type table<string, string> [Emmet Docs](https://docs.emmet.io/customization/snippets/#variables)
     variables = {},
   },
-})
-
+}
 
 -- configuring single server, example: typescript
 -- lspconfig.ts_ls.setup {

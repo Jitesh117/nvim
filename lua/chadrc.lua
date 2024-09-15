@@ -5,6 +5,7 @@
 local options = {
   base46 = {
     theme = "catppuccin",
+    transparency = false,
     hl_override = {
       NvDashAscii = {
         bg = "NONE",
@@ -29,6 +30,29 @@ local options = {
         [[ ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ]],
         [[                                                    ]],
       },
+    },
+  },
+  mason = {
+    pkgs = {
+      -- go stuff
+      "gopls",
+      "gofumpt",
+      "golines",
+      "goimports",
+      "goimports-reviser",
+      -- python stuff
+      "pyright",
+      "black",
+      "mypy",
+      "ruff",
+      "debugpy",
+      -- web dev stuff
+      "eslint-lsp",
+      "prettier",
+      "tailwindcss-language-server",
+      "typescript-language-server",
+      -- markdown
+      "marksman",
     },
   },
 }
