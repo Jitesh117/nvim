@@ -2,34 +2,36 @@
 -- https://github.com/NvChad/ui/blob/v2.5/lua/nvconfig.lua
 -- Please read that file to know all available options :(
 
----@type ChadrcConfig
-local M = {}
-
-M.base46 = {
-  theme = "catppuccin",
-  -- transparency = true,
-  hl_override = {
-    NvDashAscii = {
-      bg = "NONE",
-      fg = "baby_pink",
-    },
-    NvDashButtons = {
-      bg = "NONE",
+local options = {
+  base46 = {
+    theme = "catppuccin",
+    hl_override = {
+      NvDashAscii = {
+        bg = "NONE",
+        fg = "baby_pink",
+      },
+      NvDashButtons = {
+        bg = "NONE",
+        fg = "white",
+      },
     },
   },
-  nvdash = {
-    load_on_startup = true,
-    header = {
-      [[                                                    ]],
-      [[ ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ]],
-      [[ ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ]],
-      [[ ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ]],
-      [[ ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ]],
-      [[ ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ]],
-      [[ ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ]],
-      [[                                                    ]],
+  ui = {
+    nvdash = {
+      load_on_startup = true,
+      header = {
+        [[                                                    ]],
+        [[ ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ]],
+        [[ ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ]],
+        [[ ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ]],
+        [[ ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ]],
+        [[ ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ]],
+        [[ ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ]],
+        [[                                                    ]],
+      },
     },
   },
 }
 
-return M
+local status, chadrc = pcall(require, "chadrc")
+return vim.tbl_deep_extend("force", options, status and chadrc or {})
