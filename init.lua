@@ -35,5 +35,3 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
-
-vim.opt.relativenumber = true -- relative line number

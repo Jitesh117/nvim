@@ -14,6 +14,7 @@ map("n", "j", "gj", { desc = "Move down by visual line" })
 map("n", "k", "gk", { desc = "Move up by visual line" })
 map("v", "j", "gj", { desc = "Move down by visual line" })
 map("v", "k", "gk", { desc = "Move up by visual line" })
+
 -- DAP mappings
 map("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = " DAP Add breakpoint at line" })
 map("n", "<leader>dus", function()
