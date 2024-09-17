@@ -75,20 +75,6 @@ for _, lsp in ipairs(web_dev_servers) do
   }
 end
 
--- markdown
-local markdown_servers = { "marksman" }
-
-for _, lsp in ipairs(markdown_servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { "markdown" }, -- add markdown file type here
-    settings = {
-      -- add any specific settings for the Markdown LSP here
-    },
-  }
-end
-
 -- emmet lsp
 lspconfig.emmet_language_server.setup {
   filetypes = {

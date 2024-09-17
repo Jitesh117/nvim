@@ -4,7 +4,7 @@
 
 local options = {
   base46 = {
-    theme = "catppuccin",
+    theme = "tokyonight",
     transparency = false,
     hl_override = {
       NvDashAscii = {
