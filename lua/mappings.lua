@@ -1,6 +1,5 @@
 require "nvchad.mappings"
 
--- add yours here
 local map = vim.keymap.set
 
 -- General mappings
@@ -45,3 +44,9 @@ end, { desc = "Persistence Restore Last Session" })
 map("n", "<leader>qd", function()
   require("persistence").stop()
 end, { desc = "Persistence Don't Save Current Session" })
+
+-- LSP mappings
+
+map("n", "<leader>lf", function()
+  vim.diagnostic.open_float { border = "rounded" }
+end, { desc = "LSP Floating diagnostic" })
