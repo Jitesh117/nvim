@@ -35,3 +35,11 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+require("noice").setup {
+  lsp = {
+    signature = {
+      enabled = false,
+    },
+  },
+}
