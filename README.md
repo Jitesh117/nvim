@@ -1,9 +1,40 @@
-**This repo is supposed to used as config by NvChad users!**
+# My Neovim Configuration
 
-- The main nvchad repo (NvChad/NvChad) is used as a plugin by this repo.
-- So you just import its modules , like `require "nvchad.options" , require "nvchad.mappings"`
-- So you can delete the .git from this repo ( when you clone it locally ) or fork it :)
+This Neovim configuration is based on the NvChad starter template, with additional Language Server Protocol (LSP) support for enhanced development experience.
 
-# Credits
+## Features
 
-1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
+- NvChad base configuration
+- LSP support for:
+  - Go:
+    ```lua
+    go = { "gofumpt", "goimports_reviser", "golines" }
+    ```
+  - Python:
+    ```lua
+    python = { "black" }
+    ```
+  - Web Development:
+    ```lua
+    javascript = { "prettierd" }
+    javascriptreact = { "prettierd" }
+    typescript = { "prettierd" }
+    typescriptreact = { "prettierd" }
+    css = { "prettierd" }
+    html = { "prettierd" }
+    markdown = { "prettierd" }
+    ```
+
+## Getting Started
+
+1. Install Neovim:
+2. Clone this configuration:
+   ```bash
+   git clone https://github.com/jitesh117/nvim ~/.config/nvim/lua/custom
+   ```
+3. Run the following command inside Neovim to install all required language servers and formatters:
+   ```vim
+   :MasonInstallAll
+   ```
+
+Enjoy your enhanced Neovim experience!
