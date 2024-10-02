@@ -6,24 +6,14 @@ This Neovim configuration is based on the NvChad starter template, with addition
 
 - NvChad base configuration
 - LSP support for:
+
   - Go:
-    ```lua
-    go = { "gofumpt", "goimports_reviser", "golines" }
-    ```
   - Python:
-    ```lua
-    python = { "black" }
-    ```
-  - Web Development:
-    ```lua
-    javascript = { "prettierd" }
-    javascriptreact = { "prettierd" }
-    typescript = { "prettierd" }
-    typescriptreact = { "prettierd" }
-    css = { "prettierd" }
-    html = { "prettierd" }
-    markdown = { "prettierd" }
-    ```
+  - HTML
+  - CSS
+  - JS/JSX
+  - TS/TSX
+  - Tailwind
 
 ## Getting Started
 
