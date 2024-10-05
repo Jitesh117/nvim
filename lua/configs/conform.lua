@@ -16,6 +16,8 @@ local opts = {
     css = { "prettierd" },
     html = { "prettierd" },
     markdown = { "prettierd" },
+    c = { "clang-format" },
+    cpp = { "clang-format" },
   },
 
   format_on_save = {

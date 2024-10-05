@@ -2,6 +2,7 @@
 require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
+local on_init = require("nvchad.configs.lspconfig").on_init
 
 -- EXAMPLE
 local servers = { "html", "cssls" }
@@ -120,3 +121,13 @@ lspconfig.emmet_language_server.setup {
 --   on_init = nvlsp.on_init,
 --   capabilities = nvlsp.capabilities,
 -- }
+-- c & cpp setup
+lspconfig.clangd.setup {
+  on_attach = function(client, bufnr)
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+    on_attach(client, bufnr)
+  end,
+  on_init = on_init,
+  capabilities = capabilities,
+}
