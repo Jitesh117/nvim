@@ -78,6 +78,7 @@ local options = {
       "typescript-language-server",
       -- markdown
       "marksman",
+      -- C/CPP stuff
       "clangd",
       "clang-format",
     },
