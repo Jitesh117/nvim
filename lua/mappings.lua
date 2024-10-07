@@ -51,7 +51,7 @@ map("n", "<leader>lf", function()
   vim.diagnostic.open_float { border = "rounded" }
 end, { desc = "LSP Floating diagnostic" })
 
--- noice mappints
+-- noice mappings
 map("n", "<leader>nd", "<cmd>Noice dismiss <CR>", { desc = "Noice Messages dismiss" })
 map("n", "<leader>nh", "<cmd>Noice history<CR>", { desc = "Noice View Message history" })
 map("n", "<leader>nn", "<cmd>Noice toggle<CR>", { desc = "Noice View Notifications" })
@@ -60,3 +60,12 @@ map("n", "<leader>ne", "<cmd>Noice errors<CR>", { desc = "Noice View Noice error
 map("n", "<leader>nt", "<cmd>Noice enable<CR>", { desc = "Noice Enable Noice for current session" })
 map("n", "<leader>nT", "<cmd>Noice disable<CR>", { desc = "Noice Disable Noice for current session" })
 map("n", "<leader>ns", "<cmd>Noice stats<CR>", { desc = "Noice View Noice stats" })
+
+-- gitsigns mapings
+map("n", "<leader>ph", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Gitsigns Git preview hunk" })
+map("n", "<leader>ph", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Gitsigns: Preview hunk" })
+map("n", "<leader>bl", "<cmd>Gitsigns blame_line<CR>", { desc = "Gitsigns: Blame line" })
+map("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>", { desc = "Gitsigns: Toggle line blame" })
+map("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", { desc = "Gitsigns: Diff this" })
+map("n", "]h", "<cmd>Gitsigns next_hunk<CR>", { desc = "Gitsigns: Next hunk" })
+map("n", "[h", "<cmd>Gitsigns prev_hunk<CR>", { desc = "Gitsigns: Previous hunk" })
