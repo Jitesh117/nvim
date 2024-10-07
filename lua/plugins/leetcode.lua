@@ -14,5 +14,11 @@ return {
   },
   opts = {
     -- configuration goes here
+    injector = {
+      ["cpp"] = {
+        before = { "#include <bits/stdc++.h>", "using namespace std;" },
+        -- after = "int main() {}",
+      },
+    },
   },
 }
