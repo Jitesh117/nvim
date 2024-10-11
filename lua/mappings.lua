@@ -61,11 +61,15 @@ map("n", "<leader>nt", "<cmd>Noice enable<CR>", { desc = "Noice Enable Noice for
 map("n", "<leader>nT", "<cmd>Noice disable<CR>", { desc = "Noice Disable Noice for current session" })
 map("n", "<leader>ns", "<cmd>Noice stats<CR>", { desc = "Noice View Noice stats" })
 
--- gitsigns mapings
+-- gitsigns mappings
 map("n", "<leader>ph", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Gitsigns Git preview hunk" })
-map("n", "<leader>ph", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Gitsigns: Preview hunk" })
-map("n", "<leader>bl", "<cmd>Gitsigns blame_line<CR>", { desc = "Gitsigns: Blame line" })
-map("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>", { desc = "Gitsigns: Toggle line blame" })
-map("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", { desc = "Gitsigns: Diff this" })
-map("n", "]h", "<cmd>Gitsigns next_hunk<CR>", { desc = "Gitsigns: Next hunk" })
-map("n", "[h", "<cmd>Gitsigns prev_hunk<CR>", { desc = "Gitsigns: Previous hunk" })
+map("n", "<leader>ph", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Gitsigns Preview hunk" })
+map("n", "<leader>bl", "<cmd>Gitsigns blame_line<CR>", { desc = "Gitsigns Blame line" })
+map("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>", { desc = "Gitsigns Toggle line blame" })
+map("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", { desc = "Gitsigns Diff this" })
+map("n", "]h", "<cmd>Gitsigns next_hunk<CR>", { desc = "Gitsigns Next hunk" })
+map("n", "[h", "<cmd>Gitsigns prev_hunk<CR>", { desc = "Gitsigns Previous hunk" })
+
+-- leetcode mappings
+map("n", "<leader>lr", "<cmd>Leet run<CR>", { desc = "LeetCode Run tests" })
+map("n", "<leader>ls", "<cmd>Leet submit<CR>", { desc = "LeetCode Submit solution" })
