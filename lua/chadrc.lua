@@ -32,9 +32,7 @@ local options = {
       {
         txt = "  Restore Session",
         keys = "Spc q s",
-        cmd = function()
-          require("persistence").load()
-        end,
+        cmd = 'function() require("persistence").load() end',
       },
       { txt = "  Find File", keys = "Spc f f", cmd = "Telescope find_files" },
       { txt = "  Recent Files", keys = "Spc f o", cmd = "Telescope oldfiles" },
