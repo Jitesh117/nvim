@@ -8,7 +8,7 @@ This Neovim configuration is based on the NvChad starter template, with addition
 - LSP support for:
 
   - Go
-  - Python:
+  - Python
   - C/C++
   - HTML
   - CSS
@@ -18,7 +18,7 @@ This Neovim configuration is based on the NvChad starter template, with addition
 
 ## Getting Started
 
-1. Install Neovim:
+1. Install Neovim. You can check out the official [docs](https://github.com/neovim/neovim/blob/master/INSTALL.md)
 2. Clone this configuration:
    ```bash
    git clone https://github.com/jitesh117/nvim ~/.config/nvim && nvim
