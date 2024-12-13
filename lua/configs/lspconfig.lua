@@ -21,7 +21,6 @@ local on_attach = require("nvchad.configs.lspconfig").on_attach
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-
 -- go LSP
 lspconfig.gopls.setup {
   on_attach = on_attach,
@@ -67,7 +66,7 @@ for _, lsp in ipairs(python_servers) do
   }
 end
 
-local web_dev_servers = { "ts_ls", "tailwindcss", "eslint" }
+local web_dev_servers = { "ts_ls", "tailwindcss" }
 
 for _, lsp in ipairs(web_dev_servers) do
   lspconfig[lsp].setup {

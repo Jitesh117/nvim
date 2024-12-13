@@ -45,16 +45,6 @@ return {
     end,
   },
   {
-    "folke/persistence.nvim",
-    event = "BufReadPre",
-    config = function()
-      require("persistence").setup {
-        dir = vim.fn.expand(vim.fn.stdpath "state" .. "/sessions/"),
-        options = { "buffers", "curdir", "tabpages", "winsize" },
-      }
-    end,
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
       local opts = require "nvchad.configs.treesitter"
@@ -79,19 +69,6 @@ return {
     },
     config = function()
       require("nvim-ts-autotag").setup()
-    end,
-  },
-
-  -- Wakatime
-  { "wakatime/vim-wakatime", lazy = false },
-  {
-    "christoomey/vim-tmux-navigator",
-    lazy = false,
-  },
-  {
-    "olrtg/nvim-emmet",
-    config = function()
-      vim.keymap.set({ "n", "v" }, "<leader>xe", require("nvim-emmet").wrap_with_abbreviation)
     end,
   },
 

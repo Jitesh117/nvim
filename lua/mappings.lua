@@ -52,14 +52,14 @@ map("n", "<leader>lf", function()
 end, { desc = "LSP Floating diagnostic" })
 
 -- noice mappings
-map("n", "<leader>nd", "<cmd>Noice dismiss <CR>", { desc = "Noice Messages dismiss" })
-map("n", "<leader>nh", "<cmd>Noice history<CR>", { desc = "Noice View Message history" })
-map("n", "<leader>nn", "<cmd>Noice toggle<CR>", { desc = "Noice View Notifications" })
-map("n", "<leader>nl", "<cmd>Noice last<CR>", { desc = "Noice View last Noice message" })
-map("n", "<leader>ne", "<cmd>Noice errors<CR>", { desc = "Noice View Noice errors" })
-map("n", "<leader>nt", "<cmd>Noice enable<CR>", { desc = "Noice Enable Noice for current session" })
-map("n", "<leader>nT", "<cmd>Noice disable<CR>", { desc = "Noice Disable Noice for current session" })
-map("n", "<leader>ns", "<cmd>Noice stats<CR>", { desc = "Noice View Noice stats" })
+-- map("n", "<leader>nd", "<cmd>Noice dismiss <CR>", { desc = "Noice Messages dismiss" })
+-- map("n", "<leader>nh", "<cmd>Noice history<CR>", { desc = "Noice View Message history" })
+-- map("n", "<leader>nn", "<cmd>Noice toggle<CR>", { desc = "Noice View Notifications" })
+-- map("n", "<leader>nl", "<cmd>Noice last<CR>", { desc = "Noice View last Noice message" })
+-- map("n", "<leader>ne", "<cmd>Noice errors<CR>", { desc = "Noice View Noice errors" })
+-- map("n", "<leader>nt", "<cmd>Noice enable<CR>", { desc = "Noice Enable Noice for current session" })
+-- map("n", "<leader>nT", "<cmd>Noice disable<CR>", { desc = "Noice Disable Noice for current session" })
+-- map("n", "<leader>ns", "<cmd>Noice stats<CR>", { desc = "Noice View Noice stats" })
 
 -- gitsigns mappings
 map("n", "<leader>ph", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Gitsigns Git preview hunk" })
