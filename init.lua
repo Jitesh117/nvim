@@ -36,19 +36,7 @@ vim.schedule(function()
   require "mappings"
 end)
 
---
--- local function start_brainrot_lsp()
---   local filetype = vim.bo.filetype
---   if filetype == "text" or filetype == "markdown" then
---     vim.lsp.start {
---       name = "brainrot-lsp",
---       cmd = { "./bin/brainrot-lsp" },
---       root_dir = vim.fn.getcwd(),
---     }
---   end
--- end
---
--- vim.api.nvim_create_autocmd("BufEnter", {
---   pattern = "*",
---   callback = start_brainrot_lsp,
--- })
+vim.cmd [[
+  highlight LineNr ctermfg=grey guifg=#aaaaaa
+  highlight CursorLineNr ctermfg=white guifg=white gui=bold cterm=bold
+]]
