@@ -36,7 +36,7 @@ map({ "n", "t" }, "<leader>tv", function()
   require("nvchad.term").toggle { pos = "vsp", id = "vtoggleTerm" }
 end, { desc = "terminal vertical toggle" })
 
-map({ "n", "t" }, "<leader>th", function()
+map({ "n", "t" }, "<leader>tt", function()
   require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
 end, { desc = "terminal horizontal toggle" })
 

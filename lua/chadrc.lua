@@ -84,7 +84,7 @@ local options = {
       "clang-format",
 
       -- Elixir stuff
-      "elixir-ls"
+      "elixir-ls",
     },
   },
 }
