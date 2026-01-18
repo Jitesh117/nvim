@@ -8,6 +8,7 @@ This Neovim configuration is based on the NvChad starter template, with addition
 - LSP support for:
 
   - Go
+  - Elixir/Heex
   - Python
   - C/C++
   - HTML
