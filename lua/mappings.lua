@@ -32,6 +32,16 @@ map("n", "<leader>dgl", function()
   require("dap-go").debug_last()
 end, { desc = "DAP Debug last go test" })
 
+map({ "n", "t" }, "<leader>tv", function()
+  require("nvchad.term").toggle { pos = "vsp", id = "vtoggleTerm" }
+end, { desc = "terminal vertical toggle" })
+
+map({ "n", "t" }, "<leader>th", function()
+  require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
+end, { desc = "terminal horizontal toggle" })
+
+
+
 -- Gopher mappings
 map("n", "<leader>gsj", "<cmd> GoTagAdd json <CR>", { desc = "Gopher Add json struct tags" })
 map("n", "<leader>gsy", "<cmd> GoTagAdd yaml <CR>", { desc = "Gopher Add yaml struct tags" })
@@ -124,3 +134,9 @@ vim.keymap.set("n", "<leader>cf", function()
   vim.cmd("split " .. output_file)
   vim.cmd "wincmd h"
 end, { desc = "Create new C++ problem folder with template and tests" })
+
+
+-- insert @spec suggestion
+vim.keymap.set("n", "<leader>es", function()
+  vim.lsp.codelens.run()
+end, { desc = "Elixir insert @spec" })
