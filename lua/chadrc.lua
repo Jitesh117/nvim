@@ -71,7 +71,10 @@ local options = {
       "debugpy",
       -- web dev stuff
       "eslint-lsp",
+      "emmet-ls",
+      "emmet-language-server"
       "prettier",
+      "prettierd",
       "tailwindcss-language-server",
       "typescript-language-server",
       -- markdown
@@ -79,6 +82,9 @@ local options = {
       -- C/CPP stuff
       "clangd",
       "clang-format",
+
+      -- Elixir stuff
+      "elixir-ls"
     },
   },
 }
