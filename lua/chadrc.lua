@@ -72,7 +72,7 @@ local options = {
       -- web dev stuff
       "eslint-lsp",
       "emmet-ls",
-      "emmet-language-server"
+      "emmet-language-server",
       "prettier",
       "prettierd",
       "tailwindcss-language-server",
