@@ -98,7 +98,7 @@ lspconfig.tailwindcss.setup {
     "eelixir",
   },
   root_dir = function(fname)
-    local util = require("lspconfig.util")
+    local util = require "lspconfig.util"
     return util.root_pattern("tailwind.config.js", "tailwind.config.ts", "assets/css/app.css", "mix.exs")(fname)
   end,
   init_options = {

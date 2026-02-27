@@ -55,6 +55,9 @@ return {
         "tsx",
         "go",
         "python",
+        "elixir",
+        "c",
+        "cpp",
       }
       return opts
     end,
